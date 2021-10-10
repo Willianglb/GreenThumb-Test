@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Front End Test - GreenThumb</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./scss/reset.scss" />
+    <link rel="stylesheet" href="./scss/main.scss" />
+    <link rel="stylesheet" href="./scss/settings.scss" />
+  </head>
+
+  <body>
+    <header id="hero" class="hero">
+      <div class="wrapper">
+        <div class="hero__logo">
+          <img src="images/icons/logo-white.svg" alt="Green Thumb." />
+        </div>
+        <div class="hero__title">
+          <h1>Find your next green friend</h1>
+          <div class="hero__title__icon">
+            <img src="images/icons/arrow-down.svg" alt="Arrow for down" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="[ content ] [ bg-primary ]">
+      <section id="menu" class="[ menu ] [ wrapper space ]">
+        <section class="[ filter ] [ flow ]">
+          <img
+            class="filter__image"
+            src="images/illustrations/sun.png"
+            alt="The sun with sunglasses"
+          />
+          <label class="filter__label" to="filter-sun">
+            <b>1.</b> Set the amount of <b>sunlight</b> your plant will get.
+          </label>
+          <select
+            id="filter-sun"
+            name="filter-sun"
+            class="filter__input"
+            data-key="sun"
+          >
+            <option hidden selected value>Select...</option>
+            <option value="no">No sunlight</option>
+            <option value="low">Low sunlight</option>
+            <option value="high">High sunlight</option>
+          </select>
+        </section>
+        <section class="[ filter ] [ flow ]">
+          <img
+            class="filter__image"
+            src="images/illustrations/wateringcan.png"
+            alt="A happy watering can"
+          />
+          <label class="filter__label" to="filter-water">
+            <b>2.</b> How often do you want to <b>water</b> your plant?
+          </label>
+          <select
+            id="filter-water"
+            name="filter-water"
+            class="filter__input"
+            data-key="water"
+          >
+            <option hidden selected value>Select...</option>
+            <option value="rarely">Rarely</option>
+            <option value="regularly">Regularly</option>
+            <option value="daily">Daily</option>
+          </select>
+        </section>
+        <section class="[ filter ] [ flow ]">
+          <img
+            class="filter__image"
+            src="images/illustrations/dog.png"
+            alt="A dog"
+          />
+          <label class="filter__label" to="filter-pets">
+            <b>3.</b> Do you have pets? Do they <b>chew</b> plants?
+          </label>
+          <select
+            id="filter-pets"
+            name="filter-pets"
+            class="filter__input"
+            data-key="pets"
+          >
+            <option hidden selected value>Select...</option>
+            <option value="false">No</option>
+            <option value="false">Yes, but don't eat</option>
+            <option value="true">Yes, they chew plants</option>
+          </select>
+        </section>
+      </section>
+      <main class="[ search ] [ bg-secondary ]">
+        <div id="no-result" class="[ no-result ] [ wrapper flow ]">
+          <div class="[ no-result__display ] [ flow ]">
+            <h1 class="no-result__title">No results yet...</h1>
+            <p class="no-result__text">
+              Use the filters above to find the plant that best fits your
+              environment :)
+            </p>
+          </div>
+          <img
+            class="no-result__image"
+            src="images/illustrations/no-results.png"
+            alt="A vase with a question mark above it"
+          />
+        </div>
+        <div id="search-results" class="[ search__results ] [ wrapper hidden ]">
+          <img
+            class="search__image"
+            src="images/illustrations/pick.png"
+            alt="Hand holding a leave"
+          />
+          <h1 class="search__title">Our picks for you</h1>
+          <section id="plants" class="plants"></section>
+          <a class="go-back-button" href="#hero">
+            <img src="images/icons/arrow-up.svg" alt="Arrow for back to the top" />
+            back to the top
+          </a>
+        </div>
+      </main>
+    </section>
+    <script src="js/index.js"></script>
+    <!-- Slider -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        new Splide(".splide").mount();
+      });
+    </script>
+  </body>
+</html>

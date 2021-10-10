@@ -1,0 +1,89 @@
+@media screen and (min-width: 640px) {
+  .hero {
+    background: url('../images/hero/mobile/mobile-leaves.png') left top no-repeat, 
+    url('../images/hero/mobile/mobile-plantperson.png') center 93% no-repeat, 
+    var(--color-green);
+    background-size: 100% 60%, 50% auto, contain;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    background: url('../images/hero/desktop/left-leaves.png') left bottom no-repeat, 
+    url('../images/hero/desktop/plantperson.png') 75% center no-repeat,
+    url('../images/hero/desktop/right-leaves.png') right bottom no-repeat,
+    var(--color-green);
+    background-size: 62% 100%, 18% auto, 20% 100%;
+
+    height: auto;
+
+    .hero__title {
+      width: 60%;
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    padding: 3em 0;
+  }
+
+  .filter + .filter {
+    margin-top: 0;
+    margin-left: 7em;
+  }
+
+  .no-result {
+     flex-direction: row;
+
+     .no-result__text {
+       width: 40%;
+     }
+  }
+
+  .plants {
+    display: grid;
+    gap: 1em 1em;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .plant-card, .plant-card--favorite {
+    margin: auto 0;
+  }
+
+  .plant-card {
+    max-width: 50vw;
+  }
+
+  .plant-card--favorite:first-of-type {
+    max-height: none;
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 2;
+
+    .plant-card__image {
+      width: 75%;
+    }
+  }
+}
+
+:root {
+  // Font settings
+  --font-family: 'Montserrat';
+  --font-size: 16;
+  --font-weight-light: 300;
+  --font-weight-bold: 700;
+  --font-color: #848484;
+  --line-height: 1.6;
+
+  // Colors
+  --color-white: #FFFFFF;
+  --color-green: #75BC97;
+  --color-dark-green: #15573F;
+  --color-salmon: #FD9872;
+  --color-grey: #A9A9A9;
+  --color-black: #0C261C;
+
+  // Background
+  --bg-primary: var(--color-white);
+  --bg-secondary: #F6F6F6;
+}
